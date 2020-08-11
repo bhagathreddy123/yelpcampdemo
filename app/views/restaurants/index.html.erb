@@ -6,6 +6,9 @@
       <th>Name</th>
       <th>Address</th>
       <th>Website</th>
+       <% if user_signed_in? && current_user.admin? %>
+        <th colspan="2"></th>
+        <% end %>
     </tr>
   </thead>
   <tbody>
@@ -15,9 +18,11 @@
         <td><%= restaurant.address %></td>
         <td><%= restaurant.website %></td>
         <td><%= restaurant.phone %></td>
-        <td><%= link_to "Edit this Restaurant", edit_restaurant_path(restaurant), class: "btn btn-xs btn-warning" %>|
+        <td><% if user_signed_in? && current_user.admin? %>
+            <%= link_to "Edit this Restaurant", edit_restaurant_path(restaurant), class: "btn btn-xs btn-warning" %>|
             <%= link_to "Delete this Restaurant", restaurant_path(restaurant), method: :delete,
             data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+            <% end %>
           </td>
       </tr>
     <% end %>
