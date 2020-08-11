@@ -1,0 +1,43 @@
+      <%= form_for @restaurant do |f| %>
+        <div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :name, "Name" %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :name,  class: "form-control", placeholder: "Enter Name Here" %>
+          </div>
+        </div>
+ 		
+ 		<div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :address, "Address" %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :address,  class: "form-control", placeholder: "Enter address Here" %>
+          </div>
+        </div>
+
+ 		<div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :phone, "Phone" %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :phone,  class: "form-control", placeholder: "Enter phone Here" %>
+          </div>
+        </div>
+  
+  		<div class="form-group">
+          <div class="control-label col-md-2">
+            <%= f.label :website, "Website" %>
+          </div>
+          <div class="col-md-8">
+            <%= f.text_field :website,  class: "form-control", placeholder: "Enter website Here" %>
+          </div>
+        </div> 
+
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <%= f.submit "Submit Restaurant", class: "btn btn-primary btn-lg btn-xlarge" %>
+          </div>
+        </div>
+      <% end %>

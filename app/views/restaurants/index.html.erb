@@ -1,0 +1,25 @@
+  <%= link_to "New Recipe", new_restaurant_path, class: "btn btn-xs btn-primary" %>
+
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.website %></td>
+        <td><%= restaurant.phone %></td>
+        <td><%= link_to "Edit this Restaurant", edit_restaurant_path(restaurant), class: "btn btn-xs btn-warning" %>|
+            <%= link_to "Delete this Restaurant", restaurant_path(restaurant), method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
