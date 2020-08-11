@@ -30,6 +30,14 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def search
+    if params[:search].present?
+      @restaurants = Restaurant.search(params[:search])
+    else
+      @restaurants = Restaurant.all
+    end
+  end
+
   def edit
   end
 
